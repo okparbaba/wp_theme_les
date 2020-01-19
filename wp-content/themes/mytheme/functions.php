@@ -13,3 +13,14 @@ function my_features(){
     add_theme_support('title-tag');
 }
 add_action('after_setup_theme','my_features');
+
+function my_post_types(){
+    register_post_type('event', array(
+        'public'=>true,
+        'labels'=>array(
+            'name'=>'Events'
+        ),
+        'menu_icon'=>'dashicons-calendar'
+    ));
+}
+add_action('init','my_post_types');
